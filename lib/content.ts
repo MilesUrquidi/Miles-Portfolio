@@ -22,7 +22,6 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     name: "ZotDeals",
-    language: "TypeScript",
     description:
       "A directory of everything UCI students can get for free or heavily discounted with their .edu email.",
     link: "https://github.com/MilesUrquidi/UCI-Free-Stuff",
@@ -32,7 +31,6 @@ export const projects: Project[] = [
   },
   {
     name: "Project Two",
-    language: "TypeScript",
     description: "Placeholder description of this project and what problem it solves.",
     link: "https://github.com/MilesUrquidi/placeholder",
     logo: "",
@@ -41,7 +39,6 @@ export const projects: Project[] = [
   },
   {
     name: "Project Three",
-    language: "Python",
     description: "Placeholder description of this project and what problem it solves.",
     link: "https://github.com/MilesUrquidi/placeholder",
     logo: "",
@@ -62,9 +59,9 @@ export const education: Education[] = [
 ]
 
 export const socialLinks: SocialLink[] = [
-  { name: "GitHub", url: "https://github.com/MilesUrquidi", icon: "/icons/github.svg" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/placeholder", icon: "/icons/linkedin.svg" },
-  { name: "Email", url: "mailto:urquidim@uci.edu", icon: "/icons/email.svg" },
+  { name: "GitHub", url: "https://github.com/MilesUrquidi" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/placeholder" },
+  { name: "Email", url: "mailto:urquidim@uci.edu" },
 ]
 
 export const ctaLink = "mailto:urquidim@uci.edu"

@@ -2,11 +2,11 @@
 
 ## What this is
 
-Personal portfolio website for Miles Urquidi. Next.js 15 App Router + TypeScript + Tailwind CSS v4. Style reference: https://github.com/23jmo/Johnathan-Portfolio
+Personal portfolio website for Miles Urquidi. Next.js 16 App Router + TypeScript + Tailwind CSS v4. Style reference: https://github.com/23jmo/Johnathan-Portfolio
 
 ## Stack
 
-- **Framework:** Next.js 15 (App Router) + TypeScript
+- **Framework:** Next.js 16 (App Router) + TypeScript
 - **Styling:** Tailwind CSS v4
 - **Animations:** Framer Motion
 - **Theme:** next-themes (dark/light mode)
@@ -23,7 +23,7 @@ Personal portfolio website for Miles Urquidi. Next.js 15 App Router + TypeScript
 | `lib/spotify.ts` | Spotify token refresh + now-playing fetch |
 | `lib/fonts.ts` | Figtree font config |
 | `types/index.ts` | TypeScript interfaces for all data |
-| `app/api/spotify/route.ts` | Server-side Spotify API route |
+| `app/api/spotify/now-playing/route.ts` | Server-side Spotify API route |
 | `app/globals.css` | CSS custom properties, dark mode, dotted bg |
 
 ## Component map
@@ -54,6 +54,14 @@ components/
 - Animations: 150–300ms micro-interactions, nothing over 400ms
 - Cards: rounded borders, subtle shadow, hover transitions
 
+## Current status
+
+- Lint and production build are clean as of `2026-04-28`
+- Default Next.js public SVGs were removed
+- Empty asset folders are tracked with `.gitkeep`
+- `lib/content.ts` still contains placeholder portfolio content
+- Real images still need to be added under `public/images/`
+
 ## Env vars
 
 ```
@@ -69,3 +77,4 @@ SPOTIFY_REFRESH_TOKEN=
 - Use `next/image` for all images
 - Dark mode via CSS custom properties only — no conditional Tailwind `dark:` classes on colors
 - Keep components under ~100 lines; split if they grow
+- Keep `IconCluster` rotation deterministic to avoid React purity/lint issues

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useEffect, useState, useRef, useCallback } from "react"
 import { useTheme } from "next-themes"
 import { motion, AnimatePresence } from "framer-motion"
@@ -157,8 +158,15 @@ export default function SpotifyNowPlaying() {
             style={{ background: prevBg, borderWidth: 1, borderColor: prevBorder }}
           >
             {previous.albumImageUrl && !prevImgError ? (
-              <div className="w-5 h-5 rounded-sm overflow-hidden shrink-0" style={{ backgroundColor: artBg }}>
-                <img src={previous.albumImageUrl} alt="" className="w-full h-full object-cover" onError={() => setPrevImgError(true)} />
+              <div className="relative w-5 h-5 rounded-sm overflow-hidden shrink-0" style={{ backgroundColor: artBg }}>
+                <Image
+                  src={previous.albumImageUrl}
+                  alt=""
+                  fill
+                  sizes="20px"
+                  className="object-cover"
+                  onError={() => setPrevImgError(true)}
+                />
               </div>
             ) : (
               <div className="w-5 h-5 rounded-sm flex items-center justify-center shrink-0" style={{ backgroundColor: artBg }}>
@@ -206,10 +214,28 @@ export default function SpotifyNowPlaying() {
               {current.albumImageUrl && !imgError ? (
                 current.songUrl && expanded ? (
                   <a href={current.songUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full" onClick={(e) => e.stopPropagation()}>
-                    <img src={current.albumImageUrl} alt="" className="w-full h-full object-cover" onError={() => setImgError(true)} />
+                    <span className="relative block w-full h-full">
+                      <Image
+                        src={current.albumImageUrl}
+                        alt=""
+                        fill
+                        sizes={expanded ? "72px" : "32px"}
+                        className="object-cover"
+                        onError={() => setImgError(true)}
+                      />
+                    </span>
                   </a>
                 ) : (
-                  <img src={current.albumImageUrl} alt="" className="w-full h-full object-cover" onError={() => setImgError(true)} />
+                  <span className="relative block w-full h-full">
+                    <Image
+                      src={current.albumImageUrl}
+                      alt=""
+                      fill
+                      sizes={expanded ? "72px" : "32px"}
+                      className="object-cover"
+                      onError={() => setImgError(true)}
+                    />
+                  </span>
                 )
               ) : (
                 <div className="w-full h-full flex items-center justify-center">

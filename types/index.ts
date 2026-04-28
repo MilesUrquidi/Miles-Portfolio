@@ -11,7 +11,6 @@ export interface Experience {
 
 export interface Project {
   name: string
-  language: string
   description: string
   link: string
   logo: string
@@ -35,13 +34,6 @@ export interface Education {
 export interface SocialLink {
   name: string
   url: string
-  icon: string
-}
-
-export interface Award {
-  title: string
-  description: string
-  icon?: string
 }
 
 export interface SpotifyTrack {

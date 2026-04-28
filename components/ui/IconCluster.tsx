@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 
 export interface IconClusterItem {
@@ -21,13 +21,19 @@ interface IconClusterProps {
   overlapOffset?: number
 }
 
+function getRotationSeed(item: IconClusterItem, index: number) {
+  const source = `${item.alt}-${item.tooltipText}-${index}`
+  let hash = 0
+
+  for (const char of source) {
+    hash = (hash * 31 + char.charCodeAt(0)) % 11
+  }
+
+  return hash - 5
+}
+
 export function IconCluster({ items, size = 32, overlapOffset = -10 }: IconClusterProps) {
   const [isSpread, setIsSpread] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
-
-  const rotations = useMemo(() => items.map(() => Math.random() * 10 - 5), [items])
-
-  useEffect(() => setIsMounted(true), [])
 
   return (
     <span
@@ -40,7 +46,7 @@ export function IconCluster({ items, size = 32, overlapOffset = -10 }: IconClust
       {items.map((item, index) => {
         const marginLeft = index === 0 ? 0 : isSpread ? 4 : overlapOffset
         const zIndex = items.length - index
-        const rotation = isMounted && !item.noRotation ? rotations[index] : 0
+        const rotation = item.noRotation ? 0 : getRotationSeed(item, index)
 
         const IconWrapper = item.href ? "a" : "span"
         const wrapperProps = item.href
