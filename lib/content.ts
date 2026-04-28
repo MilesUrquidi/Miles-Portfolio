@@ -1,71 +1,70 @@
 import type { Education, Experience, Project, SocialLink } from "@/types"
 
-export const name = "Miles Urquidi"
-
-export const tagline = "Software engineer who likes building things that matter."
-
-export const about =
-  "I'm a software engineer based in California, studying at UC Irvine. I like building clean, fast products and figuring out hard problems."
-
-export const socialLinks: SocialLink[] = [
-  { name: "GitHub", url: "https://github.com/MilesUrquidi" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/placeholder" },
-  { name: "Email", url: "mailto:urquidim@uci.edu" },
-]
-
-export const experience: Experience[] = [
+export const experiences: Experience[] = [
   {
-    role: "Software Engineer Intern",
+    title: "Software Engineer Intern",
     company: "Company Name",
-    url: "https://example.com",
-    start: "Jun 2024",
-    end: "Aug 2024",
-    description: [
-      "Built something impactful here.",
-      "Worked with this technology to solve that problem.",
-    ],
+    logo: "/images/logos/placeholder.svg",
+    date: "Summer 2024",
+    description: "Built something impactful here using these technologies.",
+    link: "https://example.com",
   },
   {
-    role: "Another Role",
+    title: "Another Role",
     company: "Another Company",
-    url: "https://example.com",
-    start: "Jan 2024",
-    end: "May 2024",
-    description: [
-      "Placeholder description of what you did.",
-    ],
+    logo: "/images/logos/placeholder.svg",
+    date: "2023 – 2024",
+    description: "Placeholder description of what you did here.",
+    link: "https://example.com",
   },
 ]
 
 export const projects: Project[] = [
   {
     name: "ZotDeals",
+    language: "TypeScript",
     description:
       "A directory of everything UCI students can get for free or heavily discounted with their .edu email.",
-    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    url: "https://example.com",
-    repo: "https://github.com/MilesUrquidi/UCI-Free-Stuff",
+    link: "https://github.com/MilesUrquidi/UCI-Free-Stuff",
+    logo: "",
+    techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    date: "2024",
   },
   {
     name: "Project Two",
+    language: "TypeScript",
     description: "Placeholder description of this project and what problem it solves.",
-    tech: ["React", "Node.js", "PostgreSQL"],
-    url: "https://example.com",
-    repo: "https://github.com/MilesUrquidi/placeholder",
+    link: "https://github.com/MilesUrquidi/placeholder",
+    logo: "",
+    techStack: ["React", "Node.js", "PostgreSQL"],
+    date: "2024",
   },
   {
     name: "Project Three",
+    language: "Python",
     description: "Placeholder description of this project and what problem it solves.",
-    tech: ["Python", "FastAPI", "Docker"],
-    repo: "https://github.com/MilesUrquidi/placeholder",
+    link: "https://github.com/MilesUrquidi/placeholder",
+    logo: "",
+    techStack: ["Python", "FastAPI", "Docker"],
+    date: "2023",
   },
 ]
 
 export const education: Education[] = [
   {
     school: "University of California, Irvine",
+    logo: "/images/logos/uci.png",
     degree: "B.S. Computer Science",
-    graduation: "Jun 2026",
     gpa: "3.X / 4.0",
+    date: "2022 – 2026",
+    link: "https://uci.edu",
   },
 ]
+
+export const socialLinks: SocialLink[] = [
+  { name: "GitHub", url: "https://github.com/MilesUrquidi", icon: "/icons/github.svg" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/placeholder", icon: "/icons/linkedin.svg" },
+  { name: "Email", url: "mailto:urquidim@uci.edu", icon: "/icons/email.svg" },
+]
+
+export const ctaLink = "mailto:urquidim@uci.edu"

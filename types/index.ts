@@ -1,40 +1,60 @@
-export type Experience = {
-  role: string
+export interface Experience {
+  title: string
   company: string
-  url: string
-  start: string
-  end: string | "Present"
-  description: string[]
+  logo: string
+  date: string
+  description: string
+  link?: string
+  logoScale?: number
+  logoBackground?: string
 }
 
-export type Project = {
+export interface Project {
   name: string
+  language: string
   description: string
-  tech: string[]
-  url?: string
-  repo?: string
+  link: string
+  logo: string
+  isPrivate?: boolean
+  techStack: string[]
+  date?: string
   image?: string
 }
 
-export type Education = {
+export interface Education {
   school: string
+  logo: string
   degree: string
-  graduation: string
-  gpa?: string
+  gpa: string
+  date: string
+  link?: string
+  logoBackground?: string
+  logoScale?: number
 }
 
-export type SocialLink = {
+export interface SocialLink {
   name: string
   url: string
+  icon: string
 }
 
-export type SpotifyTrack = {
+export interface Award {
+  title: string
+  description: string
+  icon?: string
+}
+
+export interface SpotifyTrack {
   isPlaying: boolean
   title?: string
   artist?: string
-  album?: string
-  albumArt?: string
+  albumImageUrl?: string
   songUrl?: string
-  progress?: number
-  duration?: number
+  progressMs?: number
+  durationMs?: number
+}
+
+export interface SpotifyData {
+  current: SpotifyTrack
+  previous?: SpotifyTrack
 }

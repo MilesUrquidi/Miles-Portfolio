@@ -1,21 +1,43 @@
 import { projects } from "@/lib/content"
 import BuildCard from "@/components/ui/BuildCard"
+import { IconCluster } from "@/components/ui/IconCluster"
 import FadeInOnScroll from "@/components/ui/FadeInOnScroll"
 
-export default function ProjectsSection() {
-  return (
-    <section className="max-w-2xl mx-auto px-6 py-16">
-      <FadeInOnScroll>
-        <h2 className="text-2xl font-semibold mb-8">Projects</h2>
-      </FadeInOnScroll>
+const projectColors = ["#3B82F6", "#10B981", "#F97316", "#A855F7"]
 
-      <div className="grid gap-4">
-        {projects.map((project, i) => (
-          <FadeInOnScroll key={project.name} delay={i * 0.1}>
-            <BuildCard project={project} />
-          </FadeInOnScroll>
-        ))}
-      </div>
-    </section>
+export default function ProjectsSection() {
+  const clusterItems = projects.map((project, index) => ({
+    src: project.logo || undefined,
+    alt: project.name,
+    tooltipText: `${project.name} — ${project.description}`,
+    href: project.link || undefined,
+    fallbackLetter: project.logo ? undefined : project.name[0].toUpperCase(),
+    fallbackColor: project.logo ? undefined : projectColors[index % projectColors.length],
+  }))
+
+  return (
+    <FadeInOnScroll>
+      <section className="space-y-6">
+        <p className="text-xl leading-relaxed text-foreground/90">
+          A few things I&apos;ve built:{" "}
+          <IconCluster items={clusterItems} />
+        </p>
+        <div className="grid gap-4">
+          {projects.map((project, i) => (
+            <BuildCard
+              key={project.name}
+              index={i}
+              name={project.name}
+              description={project.description}
+              techStack={project.techStack}
+              link={project.link}
+              isPrivate={project.isPrivate}
+              date={project.date}
+              image={project.image}
+            />
+          ))}
+        </div>
+      </section>
+    </FadeInOnScroll>
   )
 }

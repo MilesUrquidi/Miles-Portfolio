@@ -9,34 +9,38 @@ export default function CustomCursor() {
     const cursor = cursorRef.current
     if (!cursor) return
 
-    const onMove = (e: MouseEvent) => {
-      cursor.style.transform = `translate(${e.clientX - 6}px, ${e.clientY - 6}px)`
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      cursor.style.display = "none"
+      return
     }
 
-    const onEnter = () => cursor.classList.add("scale-[3]")
-    const onLeave = () => cursor.classList.remove("scale-[3]")
+    const moveCursor = (e: MouseEvent) => {
+      cursor.style.left = `${e.clientX - 6}px`
+      cursor.style.top = `${e.clientY - 6}px`
+    }
 
-    window.addEventListener("mousemove", onMove)
+    const addHover = () => cursor.classList.add("hovering")
+    const removeHover = () => cursor.classList.remove("hovering")
 
-    const interactives = document.querySelectorAll("a, button, [role='button']")
-    interactives.forEach((el) => {
-      el.addEventListener("mouseenter", onEnter)
-      el.addEventListener("mouseleave", onLeave)
-    })
+    document.addEventListener("mousemove", moveCursor)
+
+    const attachHoverListeners = () => {
+      document.querySelectorAll("a, button, [role='button']").forEach((el) => {
+        el.addEventListener("mouseenter", addHover)
+        el.addEventListener("mouseleave", removeHover)
+      })
+    }
+
+    attachHoverListeners()
+
+    const observer = new MutationObserver(attachHoverListeners)
+    observer.observe(document.body, { childList: true, subtree: true })
 
     return () => {
-      window.removeEventListener("mousemove", onMove)
-      interactives.forEach((el) => {
-        el.removeEventListener("mouseenter", onEnter)
-        el.removeEventListener("mouseleave", onLeave)
-      })
+      document.removeEventListener("mousemove", moveCursor)
+      observer.disconnect()
     }
   }, [])
 
-  return (
-    <div
-      ref={cursorRef}
-      className="fixed top-0 left-0 w-3 h-3 rounded-full bg-foreground pointer-events-none z-[9999] mix-blend-difference transition-transform duration-150 ease-out"
-    />
-  )
+  return <div ref={cursorRef} className="custom-cursor" />
 }
