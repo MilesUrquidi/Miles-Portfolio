@@ -32,7 +32,7 @@ const photoItems: MediaItem[] = [
     type: "image",
     title: "",
     desc: "",
-    url: "/images/photos/photo-4.png",
+    url: "/images/photos/photo-4.jpeg",
     span: "col-span-2 row-span-2",
   },
   {

@@ -18,11 +18,13 @@ const MediaItemRenderer = ({
   className,
   onClick,
   objectPosition,
+  objectFit = "cover",
 }: {
   item: MediaItem
   className?: string
   onClick?: () => void
   objectPosition?: string
+  objectFit?: "cover" | "contain"
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isInView, setIsInView] = useState(false)
@@ -99,8 +101,8 @@ const MediaItemRenderer = ({
     <img
       src={item.url}
       alt={item.title}
-      className={`${className} object-cover cursor-pointer`}
-      style={objectPosition ? { objectPosition } : undefined}
+      className={`${className} cursor-pointer`}
+      style={{ objectFit, ...(objectPosition ? { objectPosition } : {}) }}
       onClick={onClick}
       loading="lazy"
       decoding="async"
@@ -138,13 +140,13 @@ const GalleryModal = ({
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedItem.id}
-                className="relative w-full aspect-video max-w-[95%] sm:max-w-[85%] md:max-w-3xl h-auto max-h-[70vh] rounded-lg overflow-hidden shadow-md"
+                className="relative max-w-[95%] sm:max-w-[85%] md:max-w-3xl max-h-[80vh] rounded-lg overflow-hidden shadow-md"
                 initial={{ y: 20, scale: 0.97 }}
                 animate={{ y: 0, scale: 1, transition: { type: "spring", stiffness: 500, damping: 30, mass: 0.5 } }}
                 exit={{ y: 20, scale: 0.97, transition: { duration: 0.15 } }}
                 onClick={onClose}
               >
-                <MediaItemRenderer item={selectedItem} className="w-full h-full object-contain bg-gray-900/20" onClick={onClose} />
+                <MediaItemRenderer item={selectedItem} className="block max-h-[80vh] w-auto" objectFit="contain" onClick={onClose} />
                 <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-4 bg-gradient-to-t from-black/50 to-transparent">
                   <h3 className="text-white text-base sm:text-lg md:text-xl font-semibold">{selectedItem.title}</h3>
                   <p className="text-white/80 text-xs sm:text-sm mt-1">{selectedItem.desc}</p>
@@ -236,7 +238,8 @@ export default function InteractiveBentoGallery({ mediaItems }: InteractiveBento
             <motion.div
               key={item.id}
               layoutId={`media-${item.id}`}
-              className={`relative overflow-hidden rounded-xl cursor-move ${item.span}`}
+              layout
+              className={`relative overflow-hidden rounded-xl cursor-grab active:cursor-grabbing ${item.span}`}
               onClick={() => !isDragging && setSelectedItem(item)}
               variants={{
                 hidden: { y: 50, scale: 0.9, opacity: 0 },
@@ -244,8 +247,8 @@ export default function InteractiveBentoGallery({ mediaItems }: InteractiveBento
               }}
               whileHover={{ scale: 1.02 }}
               drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={1}
+              dragSnapToOrigin
+              dragElastic={0.2}
               onDragStart={() => setIsDragging(true)}
               onDragEnd={(_, info) => {
                 setIsDragging(false)
