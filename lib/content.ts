@@ -1,4 +1,4 @@
-import type { Education, Experience, Project, SocialLink } from "@/types"
+import type { Education, Experience, Project, SocialLink } from "@/types";
 
 export const experiences: Experience[] = [
   {
@@ -16,15 +16,23 @@ export const experiences: Experience[] = [
     logo: "/images/logos/uci.png",
     date: "Mar 2025 – Present",
     description:
-      "Built responsive website features serving 58,200 monthly visitors. Automated inventory tracking system and maintained 20+ devices for staff and students.",
-    link: "https://uci.edu",
+      "Built responsive website features serving 40,000 active visitors. Automated inventory tracking system and maintained 20+ devices for staff and students.",
+    link: "https://www.campusrec.uci.edu/",
   },
-]
+];
+
+export const philanthropyExperience: Experience = {
+  title: "Philanthropy Chairman",
+  company: "Sigma Chi",
+  logo: "/images/logos/sigmachi.svg",
+  date: "",
+  description: "I've helped raise over $94,000 for cancer research.",
+};
 
 export const projects: Project[] = [
   {
     name: "Kalea",
-    description: "UGC marketplace for student LinkedIn creators — AI generates high-conversion posts in under 2 minutes.",
+    description: "UGC marketplace for LinkedIn creators.",
     link: "https://kalea.fyi",
     logo: "/images/logos/kalea-logo.svg",
     image: "/images/projects/kalea-landing.webp",
@@ -42,7 +50,7 @@ export const projects: Project[] = [
   },
   {
     name: "ZotDeals",
-    description: "Free tools and student discounts for UCI students — 37+ deals with a .edu email.",
+    description: "Free tools and student discounts for UCI students.",
     link: "https://zotdeals.me",
     logo: "/images/logos/zotdealslogo.svg",
     image: "/images/projects/zotdeals.png",
@@ -51,7 +59,8 @@ export const projects: Project[] = [
   },
   {
     name: "Remy – AI Cooking Assistant",
-    description: "AI cooking assistant — computer vision verifies steps, voice interaction hands-free.",
+    description:
+      "AI cooking assistant — computer vision verifies steps, voice interaction hands-free.",
     link: "https://github.com/MilesUrquidi/remy",
     logo: "",
     image: "/images/projects/remy.svg",
@@ -60,14 +69,15 @@ export const projects: Project[] = [
   },
   {
     name: "Gaming Search Engine",
-    description: "Game discovery platform — real-time search and filtering across 1,000+ titles.",
+    description:
+      "Game discovery platform — real-time search and filtering across 1,000+ titles.",
     link: "https://github.com/MilesUrquidi/gaming-search-engine",
     logo: "",
     image: "/images/projects/gaming-search-engine.png",
     techStack: ["TypeScript", "React", "CSS"],
     date: "Feb 2025",
   },
-]
+];
 
 export const education: Education[] = [
   {
@@ -78,15 +88,15 @@ export const education: Education[] = [
     date: "2024 – 2028",
     link: "https://uci.edu",
   },
-]
+];
 
 export const socialLinks: SocialLink[] = [
   { name: "GitHub", url: "https://github.com/MilesUrquidi" },
   { name: "LinkedIn", url: "https://linkedin.com/in/placeholder" },
   { name: "Email", url: "mailto:urquidim@uci.edu" },
-]
+];
 
-export const ctaLink = "mailto:urquidim@uci.edu"
+export const ctaLink = "mailto:urquidim@uci.edu";
 
 export const photos = [
   "/images/photos/photo-1.jpg",
@@ -94,4 +104,4 @@ export const photos = [
   "/images/photos/photo-3.jpg",
   "/images/photos/photo-4.jpg",
   "/images/photos/photo-5.jpg",
-]
+];

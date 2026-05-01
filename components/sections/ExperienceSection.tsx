@@ -1,4 +1,4 @@
-import { experiences } from "@/lib/content"
+import { experiences, philanthropyExperience } from "@/lib/content"
 import { IconCluster } from "@/components/ui/IconCluster"
 import FadeInOnScroll from "@/components/ui/FadeInOnScroll"
 
@@ -12,6 +12,18 @@ export default function ExperienceSection() {
     backgroundColor: exp.logoBackground,
   }))
 
+  const sigmaChiItems = [
+    {
+      src: philanthropyExperience.logo,
+      alt: philanthropyExperience.company,
+      tooltipText: `${philanthropyExperience.title} @ ${philanthropyExperience.company}`,
+      href: philanthropyExperience.link,
+      scale: philanthropyExperience.logoScale,
+      backgroundColor: philanthropyExperience.logoBackground,
+      objectFit: "contain" as const,
+    },
+  ]
+
   return (
     <FadeInOnScroll>
       <section>
@@ -19,6 +31,10 @@ export default function ExperienceSection() {
           I&apos;ve built software across{" "}
           <IconCluster items={clusterItems} />{" "}
           research labs and startups.
+        </p>
+        <p className="mt-4 text-base leading-relaxed text-foreground/70">
+          Outside of engineering, {philanthropyExperience.description} with{" "}
+          <IconCluster items={sigmaChiItems} size={28} overlapOffset={0} />.
         </p>
       </section>
     </FadeInOnScroll>

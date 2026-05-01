@@ -30,8 +30,9 @@ export default function HeroSection() {
         </h1>
         <p className="text-lg sm:text-xl leading-relaxed text-foreground/90">
           I&apos;m a CS student at <IconCluster items={uciIcon} />{" "}
-          <strong>UC Irvine</strong>. I like building clean products and
-          figuring out hard problems.
+          <strong>UC Irvine</strong>. I love building products that make
+          people&apos;s lives easier, and solve the kinds of problems that save
+          me time so they can help other people too.
         </p>
         <hr className="mt-8 border-t border-border" />
       </section>
