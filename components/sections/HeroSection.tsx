@@ -16,6 +16,8 @@ export default function HeroSection() {
       src: "/images/logos/uci.png",
       alt: "UC Irvine",
       tooltipText: "UC Irvine",
+      objectFit: "contain" as const,
+      backgroundColor: "#ffffff",
     },
   ];
 

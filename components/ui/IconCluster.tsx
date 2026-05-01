@@ -13,6 +13,7 @@ export interface IconClusterItem {
   noRotation?: boolean
   scale?: number
   backgroundColor?: string
+  objectFit?: "cover" | "contain"
 }
 
 interface IconClusterProps {
@@ -82,7 +83,7 @@ export function IconCluster({ items, size = 32, overlapOffset = -10 }: IconClust
                   alt={item.alt}
                   width={size}
                   height={size}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full ${item.objectFit === "contain" ? "object-contain" : "object-cover"}`}
                   style={item.scale ? { transform: `scale(${item.scale})` } : undefined}
                 />
               </span>
