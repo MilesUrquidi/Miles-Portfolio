@@ -24,8 +24,7 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     name: "Kalea",
-    description:
-      "UGC marketplace connecting SaaS companies with student LinkedIn creators for paid product reviews. AI pipeline generates high-conversion posts in under 2 minutes.",
+    description: "UGC marketplace for student LinkedIn creators — AI generates high-conversion posts in under 2 minutes.",
     link: "https://kalea.fyi",
     logo: "/images/logos/kalea-logo.svg",
     image: "/images/projects/kalea-landing.webp",
@@ -43,8 +42,7 @@ export const projects: Project[] = [
   },
   {
     name: "ZotDeals",
-    description:
-      "Directory of free tools and student discounts available to UCI students with a .edu email. 37+ deals, email gate, click tracking, and live at zotdeals.me.",
+    description: "Free tools and student discounts for UCI students — 37+ deals with a .edu email.",
     link: "https://zotdeals.me",
     logo: "/images/logos/zotdealslogo.svg",
     image: "/images/projects/zotdeals.png",
@@ -53,8 +51,7 @@ export const projects: Project[] = [
   },
   {
     name: "Remy – AI Cooking Assistant",
-    description:
-      "Real-time cooking assistant built at IrvineHacks. Computer vision pipeline verifies cooking step completion via live camera feed. Hands-free voice interaction via OpenAI Realtime API.",
+    description: "AI cooking assistant — computer vision verifies steps, voice interaction hands-free.",
     link: "https://github.com/MilesUrquidi/remy",
     logo: "",
     image: "/images/projects/remy.svg",
@@ -63,8 +60,7 @@ export const projects: Project[] = [
   },
   {
     name: "Gaming Search Engine",
-    description:
-      "Game discovery platform with real-time search and filtering across 39 categories. Integrated RAWG API with caching, delivering access to 1,000+ games.",
+    description: "Game discovery platform — real-time search and filtering across 1,000+ titles.",
     link: "https://github.com/MilesUrquidi/gaming-search-engine",
     logo: "",
     image: "/images/projects/gaming-search-engine.png",

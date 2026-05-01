@@ -132,6 +132,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Animated theme toggle view transition */
+[data-magicui-theme-vt="active"]::view-transition-old(root),
+[data-magicui-theme-vt="active"]::view-transition-new(root) {
+  animation-duration: var(--magicui-theme-toggle-vt-duration, 400ms);
+  mix-blend-mode: normal;
+}
+[data-magicui-theme-vt="active"]::view-transition-old(root) {
+  animation: none;
+}
+
 @media (pointer: coarse) {
   .custom-cursor {
     display: none;
