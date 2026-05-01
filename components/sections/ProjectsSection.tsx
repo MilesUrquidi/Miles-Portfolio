@@ -22,7 +22,7 @@ export default function ProjectsSection() {
           A few things I&apos;ve built:{" "}
           <IconCluster items={clusterItems} />
         </p>
-        <div className="grid gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {projects.map((project, i) => (
             <BuildCard
               key={project.name}
@@ -34,6 +34,7 @@ export default function ProjectsSection() {
               isPrivate={project.isPrivate}
               date={project.date}
               image={project.image}
+              icon={project.logo || undefined}
             />
           ))}
         </div>

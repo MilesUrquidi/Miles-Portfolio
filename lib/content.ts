@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     title: "Software Engineering Intern",
     company: "Kalea.fyi",
-    logo: "/images/logos/kalea.png",
+    logo: "/images/logos/kalea-logo.svg",
     date: "Mar 2026 – Present",
     description:
       "Building a full-stack UGC marketplace connecting SaaS companies with student LinkedIn creators. Engineering an AI content pipeline using LLMs to generate high-conversion posts in under 2 minutes.",
@@ -23,11 +23,31 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    name: "Kalea",
+    description:
+      "UGC marketplace connecting SaaS companies with student LinkedIn creators for paid product reviews. AI pipeline generates high-conversion posts in under 2 minutes.",
+    link: "https://kalea.fyi",
+    logo: "/images/logos/kalea-logo.svg",
+    image: "/images/projects/kalea-landing.webp",
+    techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    date: "2026",
+  },
+  {
+    name: "Dive",
+    description: "Coming soon.",
+    link: "https://dive-gxb2.vercel.app/",
+    logo: "/images/projects/dive-logo.png",
+    image: "/images/projects/dive.png",
+    techStack: [],
+    date: "2025",
+  },
+  {
     name: "ZotDeals",
     description:
       "Directory of free tools and student discounts available to UCI students with a .edu email. 37+ deals, email gate, click tracking, and live at zotdeals.me.",
     link: "https://zotdeals.me",
-    logo: "",
+    logo: "/images/logos/zotdealslogo.svg",
+    image: "/images/projects/zotdeals.png",
     techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     date: "2025",
   },
@@ -37,6 +57,7 @@ export const projects: Project[] = [
       "Real-time cooking assistant built at IrvineHacks. Computer vision pipeline verifies cooking step completion via live camera feed. Hands-free voice interaction via OpenAI Realtime API.",
     link: "https://github.com/MilesUrquidi/remy",
     logo: "",
+    image: "/images/projects/remy.svg",
     techStack: ["Next.js", "Python", "FastAPI", "OpenAI", "OpenCV"],
     date: "Feb 2025",
   },
@@ -46,24 +67,9 @@ export const projects: Project[] = [
       "Game discovery platform with real-time search and filtering across 39 categories. Integrated RAWG API with caching, delivering access to 1,000+ games.",
     link: "https://github.com/MilesUrquidi/gaming-search-engine",
     logo: "",
+    image: "/images/projects/gaming-search-engine.png",
     techStack: ["TypeScript", "React", "CSS"],
     date: "Feb 2025",
-  },
-  {
-    name: "Dive",
-    description: "Coming soon.",
-    link: "https://github.com/MilesUrquidi",
-    logo: "",
-    techStack: [],
-    date: "2025",
-  },
-  {
-    name: "GameHub",
-    description: "Coming soon.",
-    link: "https://github.com/MilesUrquidi",
-    logo: "",
-    techStack: [],
-    date: "2025",
   },
 ]
 
