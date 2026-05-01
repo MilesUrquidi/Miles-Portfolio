@@ -65,3 +65,11 @@ export const socialLinks: SocialLink[] = [
 ]
 
 export const ctaLink = "mailto:urquidim@uci.edu"
+
+export const photos = [
+  "/images/photos/photo-1.jpg",
+  "/images/photos/photo-2.jpg",
+  "/images/photos/photo-3.jpg",
+  "/images/photos/photo-4.jpg",
+  "/images/photos/photo-5.jpg",
+]
