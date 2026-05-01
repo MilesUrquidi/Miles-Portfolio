@@ -13,6 +13,7 @@ export default function ProjectsSection() {
     href: project.link || undefined,
     fallbackLetter: project.logo ? undefined : project.name[0].toUpperCase(),
     fallbackColor: project.logo ? undefined : projectColors[index % projectColors.length],
+    backgroundColor: project.logoBackground,
   }))
 
   return (
@@ -35,6 +36,7 @@ export default function ProjectsSection() {
               date={project.date}
               image={project.image}
               icon={project.logo || undefined}
+              iconBackground={project.logoBackground}
             />
           ))}
         </div>

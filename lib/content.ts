@@ -4,7 +4,8 @@ export const experiences: Experience[] = [
   {
     title: "Software Engineering Intern",
     company: "Kalea.fyi",
-    logo: "/images/logos/kalea-logo.svg",
+    logo: "/images/logos/kalea-logo-dark.png",
+    logoBackground: "#ffffff",
     date: "Mar 2026 – Present",
     description:
       "Building a full-stack UGC marketplace connecting SaaS companies with student LinkedIn creators. Engineering an AI content pipeline using LLMs to generate high-conversion posts in under 2 minutes.",
@@ -14,6 +15,7 @@ export const experiences: Experience[] = [
     title: "Information Technology Assistant",
     company: "UC Irvine",
     logo: "/images/logos/uci.png",
+    logoBackground: "#ffffff",
     date: "Mar 2025 – Present",
     description:
       "Built responsive website features serving 40,000 active visitors. Automated inventory tracking system and maintained 20+ devices for staff and students.",
@@ -34,7 +36,8 @@ export const projects: Project[] = [
     name: "Kalea",
     description: "UGC marketplace for LinkedIn creators.",
     link: "https://kalea.fyi",
-    logo: "/images/logos/kalea-logo.svg",
+    logo: "/images/logos/kalea-logo-dark.png",
+    logoBackground: "#ffffff",
     image: "/images/projects/kalea-landing.webp",
     techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     date: "2026",

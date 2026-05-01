@@ -1,6 +1,6 @@
-import { experiences, philanthropyExperience } from "@/lib/content"
-import { IconCluster } from "@/components/ui/IconCluster"
-import FadeInOnScroll from "@/components/ui/FadeInOnScroll"
+import { experiences, philanthropyExperience } from "@/lib/content";
+import { IconCluster } from "@/components/ui/IconCluster";
+import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
 
 export default function ExperienceSection() {
   const clusterItems = experiences.map((exp) => ({
@@ -10,7 +10,7 @@ export default function ExperienceSection() {
     href: exp.link,
     scale: exp.logoScale,
     backgroundColor: exp.logoBackground,
-  }))
+  }));
 
   const sigmaChiItems = [
     {
@@ -22,15 +22,14 @@ export default function ExperienceSection() {
       backgroundColor: philanthropyExperience.logoBackground,
       objectFit: "contain" as const,
     },
-  ]
+  ];
 
   return (
     <FadeInOnScroll>
       <section>
         <p className="text-xl leading-relaxed text-foreground/90">
-          I&apos;ve built software across{" "}
-          <IconCluster items={clusterItems} />{" "}
-          research labs and startups.
+          I&apos;ve built software across <IconCluster items={clusterItems} />{" "}
+          startups and university IT.
         </p>
         <p className="mt-4 text-base leading-relaxed text-foreground/70">
           Outside of engineering, {philanthropyExperience.description} with{" "}
@@ -38,5 +37,5 @@ export default function ExperienceSection() {
         </p>
       </section>
     </FadeInOnScroll>
-  )
+  );
 }

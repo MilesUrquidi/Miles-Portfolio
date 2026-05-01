@@ -14,6 +14,7 @@ export interface Project {
   description: string
   link: string
   logo: string
+  logoBackground?: string
   isPrivate?: boolean
   techStack: string[]
   date?: string

@@ -20,6 +20,7 @@ interface BuildCardProps {
   index: number
   image?: string
   icon?: string
+  iconBackground?: string
 }
 
 export default function BuildCard({
@@ -34,6 +35,7 @@ export default function BuildCard({
   index,
   image,
   icon,
+  iconBackground,
 }: BuildCardProps) {
   const hasAwards = awards && awards.length > 0
 
@@ -61,14 +63,19 @@ export default function BuildCard({
         <div>
           <div className="flex items-center gap-2">
             {faviconUrl && (
-              <Image
-                src={faviconUrl}
-                alt={`${name} icon`}
-                width={20}
-                height={20}
-                className="rounded-sm shrink-0"
-                unoptimized={faviconUrl.startsWith("http")}
-              />
+              <span
+                className="rounded-sm shrink-0 inline-flex items-center justify-center"
+                style={iconBackground ? { backgroundColor: iconBackground, padding: 2 } : undefined}
+              >
+                <Image
+                  src={faviconUrl}
+                  alt={`${name} icon`}
+                  width={20}
+                  height={20}
+                  className="rounded-sm"
+                  unoptimized={faviconUrl.startsWith("http")}
+                />
+              </span>
             )}
             <h3 className="font-semibold text-foreground text-base leading-tight">{name}</h3>
           </div>
