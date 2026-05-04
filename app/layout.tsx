@@ -3,7 +3,6 @@ import { ThemeProvider } from "next-themes"
 import { figtree } from "@/lib/fonts"
 import CustomCursor from "@/components/ui/CustomCursor"
 import PaperAirplane from "@/components/ui/PaperAirplane"
-import WavyBackground from "@/components/ui/WavyBackground"
 import SpotifyNowPlaying from "@/components/ui/SpotifyNowPlaying"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
@@ -33,7 +32,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${figtree.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
-          <WavyBackground />
           <CustomCursor />
           <PaperAirplane />
           {children}
