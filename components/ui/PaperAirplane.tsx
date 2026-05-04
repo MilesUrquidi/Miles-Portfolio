@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 
 export default function PaperAirplane() {
+  const [isDesktop, setIsDesktop] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const stateRef = useRef({
     x: 0,
@@ -172,6 +173,12 @@ export default function PaperAirplane() {
       stateRef.current.mouseY = e.clientY;
     };
 
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      setIsDesktop(false);
+      return;
+    }
+    setIsDesktop(true);
+
     resize();
     window.addEventListener("resize", resize);
     window.addEventListener("mousemove", handleMouseMove);
@@ -185,10 +192,12 @@ export default function PaperAirplane() {
     };
   }, [draw]);
 
+  if (!isDesktop) return null;
+
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
+      className="fixed inset-0 w-full h-full pointer-events-none z-0"
     />
   );
 }

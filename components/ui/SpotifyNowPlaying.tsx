@@ -55,6 +55,7 @@ function MusicIcon({ size = 22, dark = true }: { size?: number; dark?: boolean }
 
 const PILL_WIDTH = 240
 const EXPANDED_WIDTH = 360
+const MOBILE_SIDE_MARGIN = 32
 
 export default function SpotifyNowPlaying() {
   const [data, setData] = useState<SpotifyData | null>(null)
@@ -142,6 +143,7 @@ export default function SpotifyNowPlaying() {
   const progressTrack = isDark ? "bg-white/10" : "bg-black/8"
   const progressFill = isDark ? "bg-white/50" : "bg-gray-600"
   const pausedText = isDark ? "text-white/40" : "text-gray-400"
+  const maxDockWidth = `calc(100vw - ${MOBILE_SIDE_MARGIN}px)`
 
   const springTransition = { type: "spring" as const, stiffness: 300, damping: 28, mass: 0.9 }
 
@@ -192,6 +194,7 @@ export default function SpotifyNowPlaying() {
             WebkitBackdropFilter: "blur(12px) saturate(1.4)",
             borderWidth: 1.5,
             borderColor: dockBorder,
+            maxWidth: maxDockWidth,
             boxShadow: isDark
               ? "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)"
               : "0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.8)",

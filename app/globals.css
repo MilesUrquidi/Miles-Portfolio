@@ -27,20 +27,25 @@
   --border-color: #27272a;
 }
 
-html {
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-html.dark {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-}
-
 body {
   background-color: var(--background);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
   color: var(--foreground);
   font-family: var(--font-figtree), system-ui, sans-serif;
   transition: background-color 300ms ease, color 300ms ease;
+  overflow-x: clip;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.dark body {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
 }
 
 .wavy-bg { display: none; }

@@ -8,15 +8,20 @@ const emptySubscribe = () => () => {}
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme()
   const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false)
+  const mobileInsetStyle = {
+    top: "max(1rem, env(safe-area-inset-top))",
+    right: "max(1rem, env(safe-area-inset-right))",
+  } as const
 
   if (!mounted) {
-    return <div className="fixed top-6 right-6 z-50 w-10 h-10" />
+    return <div className="fixed z-50 h-10 w-10 sm:top-6 sm:right-6" style={mobileInsetStyle} />
   }
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="fixed top-6 right-6 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-background border border-border transition-colors hover:bg-muted/20"
+      className="fixed z-50 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background transition-colors hover:bg-muted/20 sm:top-6 sm:right-6"
+      style={mobileInsetStyle}
       aria-label="Toggle dark mode"
     >
       {theme === "dark" ? (
