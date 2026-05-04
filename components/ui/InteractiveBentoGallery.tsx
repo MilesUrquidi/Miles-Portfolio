@@ -133,36 +133,35 @@ const GalleryModal = ({
         animate={{ scale: 1 }}
         exit={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        className="fixed inset-0 w-full min-h-screen sm:h-[90vh] md:h-[600px] backdrop-blur-lg rounded-none sm:rounded-lg md:rounded-xl overflow-hidden z-10"
+        className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/20"
+        onClick={onClose}
       >
-        <div className="h-full flex flex-col">
-          <div className="flex-1 p-2 sm:p-3 md:p-4 flex items-center justify-center bg-gray-50/50">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedItem.id}
-                className="relative max-w-[95%] sm:max-w-[85%] md:max-w-3xl max-h-[80vh] rounded-lg overflow-hidden shadow-md"
-                initial={{ y: 20, scale: 0.97 }}
-                animate={{ y: 0, scale: 1, transition: { type: "spring", stiffness: 500, damping: 30, mass: 0.5 } }}
-                exit={{ y: 20, scale: 0.97, transition: { duration: 0.15 } }}
-                onClick={onClose}
-              >
-                <MediaItemRenderer item={selectedItem} className="block max-h-[80vh] w-auto" objectFit="contain" onClick={onClose} />
-                <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-4 bg-gradient-to-t from-black/50 to-transparent">
-                  <h3 className="text-white text-base sm:text-lg md:text-xl font-semibold">{selectedItem.title}</h3>
-                  <p className="text-white/80 text-xs sm:text-sm mt-1">{selectedItem.desc}</p>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+        <div className="flex items-center justify-center w-full h-full p-8">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedItem.id}
+            className="relative bg-white rounded-2xl overflow-hidden shadow-2xl max-h-[70vh] max-w-[85vw] md:max-w-[50vw]"
+            initial={{ y: 20, scale: 0.97, opacity: 0 }}
+            animate={{ y: 0, scale: 1, opacity: 1, transition: { type: "spring", stiffness: 500, damping: 30, mass: 0.5 } }}
+            exit={{ y: 20, scale: 0.97, opacity: 0, transition: { duration: 0.15 } }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <MediaItemRenderer
+              item={selectedItem}
+              className="block max-h-[70vh] max-w-[85vw] md:max-w-[50vw] w-auto h-auto"
+              objectFit="contain"
+            />
+            <motion.button
+              className="absolute top-3 right-3 p-2 rounded-full bg-gray-200/90 text-gray-700 hover:bg-gray-300/90 backdrop-blur-sm shadow-sm"
+              onClick={onClose}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <X className="w-4 h-4" />
+            </motion.button>
+          </motion.div>
+        </AnimatePresence>
         </div>
-        <motion.button
-          className="absolute top-2 sm:top-2.5 md:top-3 right-2 sm:right-2.5 md:right-3 p-2 rounded-full bg-gray-200/80 text-gray-700 hover:bg-gray-300/80 backdrop-blur-sm"
-          onClick={onClose}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <X className="w-3 h-3" />
-        </motion.button>
       </motion.div>
 
       <motion.div
@@ -225,7 +224,7 @@ export default function InteractiveBentoGallery({ mediaItems }: InteractiveBento
         />
       ) : (
         <motion.div
-          className="grid grid-cols-4 gap-3 auto-rows-[180px]"
+          className="grid grid-cols-4 gap-2 auto-rows-[80px] md:gap-3 md:auto-rows-[180px]"
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -237,18 +236,17 @@ export default function InteractiveBentoGallery({ mediaItems }: InteractiveBento
           {items.map((item, index) => (
             <motion.div
               key={item.id}
-              layoutId={`media-${item.id}`}
               layout
               className={`relative overflow-hidden rounded-xl cursor-grab active:cursor-grabbing ${item.span}`}
-              onClick={() => !isDragging && setSelectedItem(item)}
+              onClick={() => !isDragging && window.innerWidth >= 768 && setSelectedItem(item)}
               variants={{
                 hidden: { y: 50, scale: 0.9, opacity: 0 },
                 visible: { y: 0, scale: 1, opacity: 1, transition: { type: "spring", stiffness: 350, damping: 25, delay: index * 0.05 } },
               }}
               whileHover={{ scale: 1.02 }}
               drag
-              dragSnapToOrigin
-              dragElastic={0.2}
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+              dragElastic={0.05}
               onDragStart={() => setIsDragging(true)}
               onDragEnd={(_, info) => {
                 setIsDragging(false)
@@ -266,7 +264,7 @@ export default function InteractiveBentoGallery({ mediaItems }: InteractiveBento
               <MediaItemRenderer
                 item={item}
                 className="absolute inset-0 w-full h-full"
-                onClick={() => !isDragging && setSelectedItem(item)}
+                onClick={() => !isDragging && window.innerWidth >= 768 && setSelectedItem(item)}
                 objectPosition={item.objectPosition}
               />
               <motion.div
