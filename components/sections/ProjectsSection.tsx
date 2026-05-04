@@ -23,7 +23,8 @@ export default function ProjectsSection() {
           A few things I&apos;ve built:{" "}
           <IconCluster items={clusterItems} />
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <p className="text-sm font-semibold uppercase tracking-widest text-foreground/40">Projects</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:[&>*:last-child:nth-child(odd)]:col-span-2 md:[&>*:last-child:nth-child(odd)]:w-1/2 md:[&>*:last-child:nth-child(odd)]:mx-auto">
           {projects.map((project, i) => (
             <BuildCard
               key={project.name}

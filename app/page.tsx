@@ -2,9 +2,9 @@ import ThemeToggle from "@/components/ui/ThemeToggle"
 import HeroSection from "@/components/sections/HeroSection"
 import ExperienceSection from "@/components/sections/ExperienceSection"
 import ProjectsSection from "@/components/sections/ProjectsSection"
-import EducationSection from "@/components/sections/EducationSection"
 import CTAFooter from "@/components/sections/CTAFooter"
 import PhotosSection from "@/components/sections/PhotosSection"
+import SocialSection from "@/components/sections/SocialSection"
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <HeroSection />
         <ExperienceSection />
         <ProjectsSection />
-        <EducationSection />
+        <SocialSection />
       </main>
       <PhotosSection />
       <main className="mx-auto max-w-2xl px-6 pb-16">

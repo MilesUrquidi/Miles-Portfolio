@@ -40,16 +40,17 @@ export const projects: Project[] = [
     logoBackground: "#ffffff",
     image: "/images/projects/kalea-landing.webp",
     techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    date: "2026",
+    date: "Apr 2026",
   },
   {
     name: "Dive",
-    description: "Coming soon.",
+    description:
+      "Team productivity app with gamified reef that grows with your progress.",
     link: "https://dive-gxb2.vercel.app/",
     logo: "/images/projects/dive-logo.png",
     image: "/images/projects/dive.png",
-    techStack: [],
-    date: "2025",
+    techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    date: "Apr 2026",
   },
   {
     name: "ZotDeals",
@@ -58,17 +59,17 @@ export const projects: Project[] = [
     logo: "/images/logos/zotdealslogo.svg",
     image: "/images/projects/zotdeals.png",
     techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    date: "2025",
+    date: "Mar 2026",
   },
   {
     name: "Remy – AI Cooking Assistant",
     description:
       "AI cooking assistant — computer vision verifies steps, voice interaction hands-free.",
-    link: "https://github.com/MilesUrquidi/remy",
+    link: "https://devpost.com/software/remy-9w1phf",
     logo: "",
     image: "/images/projects/remy.svg",
     techStack: ["Next.js", "Python", "FastAPI", "OpenAI", "OpenCV"],
-    date: "Feb 2025",
+    date: "Feb 2026",
   },
   {
     name: "Gaming Search Engine",
@@ -95,7 +96,8 @@ export const education: Education[] = [
 
 export const socialLinks: SocialLink[] = [
   { name: "GitHub", url: "https://github.com/MilesUrquidi" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/placeholder" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/miles-urquidi/" },
+  { name: "Instagram", url: "https://www.instagram.com/miles.urquidi/" },
   { name: "Email", url: "mailto:urquidim@uci.edu" },
 ];
 
