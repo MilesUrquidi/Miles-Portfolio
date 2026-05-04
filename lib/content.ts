@@ -75,7 +75,7 @@ export const projects: Project[] = [
     name: "Gaming Search Engine",
     description:
       "Game discovery platform — real-time search and filtering across 1,000+ titles.",
-    link: "https://github.com/MilesUrquidi/gaming-search-engine",
+    link: "https://github.com/MilesUrquidi/Game-Hub",
     logo: "",
     image: "/images/projects/gaming-search-engine.png",
     techStack: ["TypeScript", "React", "CSS"],

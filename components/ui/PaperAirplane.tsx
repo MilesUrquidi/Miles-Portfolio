@@ -5,6 +5,7 @@ import { useEffect, useRef, useCallback, useState } from "react";
 export default function PaperAirplane() {
   const [isDesktop, setIsDesktop] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const frameRef = useRef<number>(0);
   const stateRef = useRef({
     x: 0,
     y: 0,
@@ -156,10 +157,15 @@ export default function PaperAirplane() {
 
     ctx.restore();
 
-    requestAnimationFrame(draw);
+    frameRef.current = requestAnimationFrame(draw);
   }, []);
 
   useEffect(() => {
+    setIsDesktop(!window.matchMedia("(pointer: coarse)").matches);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -173,24 +179,17 @@ export default function PaperAirplane() {
       stateRef.current.mouseY = e.clientY;
     };
 
-    if (window.matchMedia("(pointer: coarse)").matches) {
-      setIsDesktop(false);
-      return;
-    }
-    setIsDesktop(true);
-
     resize();
     window.addEventListener("resize", resize);
     window.addEventListener("mousemove", handleMouseMove);
-
-    const frameId = requestAnimationFrame(draw);
+    frameRef.current = requestAnimationFrame(draw);
 
     return () => {
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(frameId);
+      cancelAnimationFrame(frameRef.current);
     };
-  }, [draw]);
+  }, [isDesktop, draw]);
 
   if (!isDesktop) return null;
 
