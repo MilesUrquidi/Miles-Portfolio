@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     title: "Software Engineering Intern",
     company: "Kalea.fyi",
-    logo: "/images/logos/kalea-logo-dark.png",
+    logo: "/images/logos/kalea-logo.svg",
     logoBackground: "#ffffff",
     date: "Mar 2026 – Present",
     description:
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     name: "Kalea",
     description: "UGC marketplace for LinkedIn creators.",
     link: "https://kalea.fyi",
-    logo: "/images/logos/kalea-logo-dark.png",
+    logo: "/images/logos/kalea-logo.svg",
     logoBackground: "#ffffff",
     image: "/images/projects/kalea-landing.webp",
     techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     description:
       "Team productivity app with gamified reef that grows with your progress.",
     link: "https://dive-gxb2.vercel.app/",
-    logo: "/images/projects/dive-logo.png",
+    logo: "/images/logos/dive-logo.png",
     image: "/images/projects/dive.png",
     techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     date: "Apr 2026",
