@@ -10,6 +10,7 @@ export default function ExperienceSection() {
     href: exp.link,
     scale: exp.logoScale,
     backgroundColor: exp.logoBackground,
+    objectFit: "contain" as const,
   }));
 
   const sigmaChiItems = [

@@ -32,6 +32,7 @@ export default function HeroSection() {
       alt: "UC Irvine",
       tooltipText: "UC Irvine",
       objectFit: "contain" as const,
+      scale: 0.75,
       backgroundColor: "#ffffff",
     },
   ];
