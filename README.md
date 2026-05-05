@@ -2,6 +2,6 @@
 
 Personal portfolio Site.
 
-**Live site:** [miles-portfolio-opal.vercel.app](https://miles-portfolio-opal.vercel.app)
+**Live site:** [milesurquidi.com](https://milesurquidi.com)
 
 ![Portfolio preview](/public/images/prev.webp)

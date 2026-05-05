@@ -66,7 +66,7 @@ export default async function Image() {
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://miles-portfolio-opal.vercel.app/images/avatar.jpeg"
+              src="https://milesurquidi.com/images/avatar.jpeg"
               width={88}
               height={88}
               style={{ borderRadius: "50%", objectFit: "cover" }}
