@@ -15,11 +15,13 @@ export const metadata: Metadata = {
     description: "CS student at UC Irvine. Building software across research labs and startups.",
     siteName: "Miles Urquidi",
     type: "website",
+    images: [{ url: "/og-image.webp", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Miles Urquidi",
     description: "CS student at UC Irvine. Building software across research labs and startups.",
+    images: ["/og-image.webp"],
   },
 }
 
