@@ -12,25 +12,27 @@
 }
 
 :root {
-  --background: #fafafa;
+  --background: #ffffff;
   --foreground: #1a1a1a;
   --accent: #2563eb;
   --muted: #6b7280;
   --border-color: #e5e7eb;
+  --rays-color: rgba(37, 99, 235, 0.18);
+  --rays-blend: multiply;
 }
 
 .dark {
-  --background: #0a0a0a;
+  --background: #000000;
   --foreground: #ededed;
   --accent: #60a5fa;
   --muted: #9ca3af;
   --border-color: #27272a;
+  --rays-color: rgba(160, 210, 255, 0.22);
+  --rays-blend: screen;
 }
 
 body {
   background-color: var(--background);
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
-  background-size: 20px 20px;
   color: var(--foreground);
   font-family: var(--font-figtree), system-ui, sans-serif;
   transition: background-color 300ms ease, color 300ms ease;
@@ -44,9 +46,6 @@ body {
   overflow-x: clip;
 }
 
-.dark body {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-}
 
 .wavy-bg { display: none; }
 

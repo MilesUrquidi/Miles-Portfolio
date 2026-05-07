@@ -5,6 +5,7 @@ import CustomCursor from "@/components/ui/CustomCursor"
 import PaperAirplane from "@/components/ui/PaperAirplane"
 import SpotifyNowPlaying from "@/components/ui/SpotifyNowPlaying"
 import { Analytics } from "@vercel/analytics/next"
+import ThemedLightRays from "@/components/ui/ThemedLightRays"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${figtree.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
+          <ThemedLightRays />
           <CustomCursor />
           <PaperAirplane />
           {children}

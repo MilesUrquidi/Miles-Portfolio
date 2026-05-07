@@ -7,7 +7,7 @@ import PhotosSection from "@/components/sections/PhotosSection"
 
 export default function Home() {
   return (
-    <>
+    <div className="isolate">
       <main className="mx-auto max-w-2xl px-6 py-16 space-y-8">
         <ThemeToggle />
         <HeroSection />
@@ -18,6 +18,6 @@ export default function Home() {
       <main className="mx-auto max-w-2xl px-6 pb-16">
         <CTAFooter />
       </main>
-    </>
+    </div>
   )
 }
