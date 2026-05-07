@@ -21,6 +21,7 @@ interface BuildCardProps {
   image?: string
   icon?: string
   iconBackground?: string
+  aspectClass?: string
 }
 
 export default function BuildCard({
@@ -36,6 +37,7 @@ export default function BuildCard({
   image,
   icon,
   iconBackground,
+  aspectClass = "aspect-video",
 }: BuildCardProps) {
   const hasAwards = awards && awards.length > 0
 
@@ -46,7 +48,7 @@ export default function BuildCard({
       : null
 
   const cardContent = (
-    <div className="group relative w-full aspect-video rounded-xl overflow-hidden border border-border bg-background">
+    <div className={`group relative w-full ${aspectClass} rounded-xl overflow-hidden border border-border bg-background`}>
       {image && (
         <Image
           src={image}

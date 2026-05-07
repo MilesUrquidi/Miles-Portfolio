@@ -48,7 +48,8 @@ const photoItems: MediaItem[] = [
 export default function PhotosSection() {
   return (
     <FadeInOnScroll>
-      <div className="border-t border-border pt-8 px-6 max-w-4xl mx-auto">
+      <div className="px-6 max-w-2xl mx-auto">
+        <hr className="border-t border-border mb-8" />
         <InteractiveBentoGallery mediaItems={photoItems} />
       </div>
     </FadeInOnScroll>

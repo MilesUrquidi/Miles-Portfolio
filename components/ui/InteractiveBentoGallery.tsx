@@ -224,7 +224,7 @@ export default function InteractiveBentoGallery({ mediaItems }: InteractiveBento
         />
       ) : (
         <motion.div
-          className="grid grid-cols-4 gap-2 auto-rows-[80px] md:gap-3 md:auto-rows-[180px]"
+          className="grid grid-cols-4 gap-2 auto-rows-[80px] md:gap-3 md:auto-rows-[130px]"
           initial="hidden"
           animate="visible"
           exit="hidden"

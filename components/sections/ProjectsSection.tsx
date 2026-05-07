@@ -1,9 +1,9 @@
-import { projects } from "@/lib/content"
-import BuildCard from "@/components/ui/BuildCard"
-import { IconCluster } from "@/components/ui/IconCluster"
-import FadeInOnScroll from "@/components/ui/FadeInOnScroll"
+import { projects } from "@/lib/content";
+import BuildCard from "@/components/ui/BuildCard";
+import { IconCluster } from "@/components/ui/IconCluster";
+import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
 
-const projectColors = ["#3B82F6", "#10B981", "#F97316", "#A855F7"]
+const projectColors = ["#3B82F6", "#10B981", "#F97316", "#A855F7"];
 
 export default function ProjectsSection() {
   const clusterItems = projects.map((project, index) => ({
@@ -12,36 +12,41 @@ export default function ProjectsSection() {
     tooltipText: `${project.name} — ${project.description}`,
     href: project.link || undefined,
     fallbackLetter: project.logo ? undefined : project.name[0].toUpperCase(),
-    fallbackColor: project.logo ? undefined : projectColors[index % projectColors.length],
+    fallbackColor: project.logo
+      ? undefined
+      : projectColors[index % projectColors.length],
     backgroundColor: project.logoBackground,
-  }))
+  }));
 
   return (
     <FadeInOnScroll>
       <section className="space-y-6">
         <p className="text-xl leading-relaxed text-foreground/90">
-          A few things I&apos;ve built:{" "}
-          <IconCluster items={clusterItems} />
+          A few things I&apos;ve built: <IconCluster items={clusterItems} />
         </p>
-        <p className="text-sm font-semibold uppercase tracking-widest text-foreground/40">Projects</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:[&>*:last-child:nth-child(odd)]:col-span-2 md:[&>*:last-child:nth-child(odd)]:w-1/2 md:[&>*:last-child:nth-child(odd)]:mx-auto">
+        <p className="text-sm font-semibold uppercase tracking-widest text-foreground/40">
+          Projects
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projects.map((project, i) => (
-            <BuildCard
-              key={project.name}
-              index={i}
-              name={project.name}
-              description={project.description}
-              techStack={project.techStack}
-              link={project.link}
-              isPrivate={project.isPrivate}
-              date={project.date}
-              image={project.image}
-              icon={project.logo || undefined}
-              iconBackground={project.logoBackground}
-            />
+            <div key={project.name} className={i === 0 ? "md:col-span-2" : ""}>
+              <BuildCard
+                index={i}
+                name={project.name}
+                description={project.description}
+                techStack={project.techStack}
+                link={project.link}
+                isPrivate={project.isPrivate}
+                date={project.date}
+                image={project.image}
+                icon={project.logo || undefined}
+                iconBackground={project.logoBackground}
+                aspectClass={i === 0 ? "aspect-[32/9]" : "aspect-video"}
+              />
+            </div>
           ))}
         </div>
       </section>
     </FadeInOnScroll>
-  )
+  );
 }
