@@ -31,7 +31,6 @@ export default function ThemedLightRays() {
         className="absolute inset-0"
         color={isDark ? "rgba(160, 210, 255, 0.32)" : "rgba(180, 215, 255, 0.38)"}
         blendMode={isDark ? "screen" : "multiply"}
-        maxOpacity={0.5}
         count={14}
       />
     </div>
