@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { figtree } from "@/lib/fonts"
 import CustomCursor from "@/components/ui/CustomCursor"
-import PaperAirplane from "@/components/ui/PaperAirplane"
 import SpotifyNowPlaying from "@/components/ui/SpotifyNowPlaying"
 import { Analytics } from "@vercel/analytics/next"
 import ThemedLightRays from "@/components/ui/ThemedLightRays"
@@ -35,7 +34,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
           <ThemedLightRays />
           <CustomCursor />
-          <PaperAirplane />
           {children}
           <SpotifyNowPlaying />
           <Analytics />
