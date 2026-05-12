@@ -41,7 +41,7 @@ export default function ProjectsSection() {
                 image={project.image}
                 icon={project.logo || undefined}
                 iconBackground={project.logoBackground}
-                aspectClass={i === 0 ? "aspect-[32/9]" : "aspect-video"}
+                aspectClass={i === 0 ? "aspect-video md:aspect-[32/9]" : "aspect-video"}
               />
             </div>
           ))}
