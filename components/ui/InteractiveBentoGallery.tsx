@@ -212,6 +212,15 @@ export default function InteractiveBentoGallery({ mediaItems }: InteractiveBento
   const [items, setItems] = useState(mediaItems)
   const [isDragging, setIsDragging] = useState(false)
 
+  useEffect(() => {
+    if (selectedItem) {
+      document.body.classList.add("gallery-open")
+    } else {
+      document.body.classList.remove("gallery-open")
+    }
+    return () => document.body.classList.remove("gallery-open")
+  }, [selectedItem])
+
   return (
     <AnimatePresence mode="wait">
       {selectedItem ? (

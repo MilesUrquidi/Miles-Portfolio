@@ -182,7 +182,7 @@ export default function SpotifyNowPlaying() {
         )}
       </AnimatePresence>
 
-      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40" ref={dockRef}>
+      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 spotify-pill-dock" ref={dockRef}>
         <motion.div
           onClick={() => setExpanded(!expanded)}
           onMouseEnter={() => setHovered(true)}

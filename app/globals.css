@@ -131,6 +131,11 @@ body.dark .spotify-glass-dock::before {
   background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.12) 100%);
 }
 
+/* Hide Spotify pill when photo gallery modal is open */
+body.gallery-open .spotify-pill-dock {
+  display: none;
+}
+
 /* Selection color */
 ::selection {
   background-color: var(--accent);
