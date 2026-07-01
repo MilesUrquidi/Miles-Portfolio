@@ -51,8 +51,8 @@ export default function HeroSection() {
   return (
     <FadeInOnScroll>
       <section className="space-y-6">
-        <h1 className="text-3xl sm:text-4xl leading-snug tracking-tight">
-          Hi, I&apos;m <IconCluster items={avatarIcon} size={48} />{" "}
+        <h1 className="text-4xl sm:text-5xl leading-snug tracking-tight">
+          Hi, I&apos;m <IconCluster items={avatarIcon} size={64} />{" "}
           <strong>Miles Urquidi</strong>.
         </h1>
         <p className="text-lg sm:text-xl leading-relaxed text-foreground/90">
